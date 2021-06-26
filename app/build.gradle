@@ -7,8 +7,9 @@ android {
         applicationId "io.github.chronosx88.yggdrasil"
         minSdkVersion 15
         targetSdkVersion 29
-        versionCode 23
-        versionName "2.0.3"
+
+        versionCode 34
+        versionName "2.0.16-RC1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         setProperty("archivesBaseName", project.getParent().name+"-"+versionName)
     }

@@ -1,46 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        package="io.github.chronosx88.yggdrasil">
+        package="org.yggdrasil.app.crispa">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-            android:name=".YggApplication"
+            android:name="org.yggdrasil.app.crispa.YggApplication"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
+            android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
         <activity
-                android:name=".AboutActivity"
-                android:parentActivityName=".MainActivity"
+                android:name="org.yggdrasil.app.crispa.AboutActivity"
+                android:parentActivityName="org.yggdrasil.app.crispa.MainActivity"
                 android:label="@string/title_activity_about"
                 android:theme="@style/AppTheme.NoActionBar"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".PeerListActivity"
-                android:parentActivityName=".MainActivity"
+                android:name="org.yggdrasil.app.crispa.PeerListActivity"
+                android:parentActivityName="org.yggdrasil.app.crispa.MainActivity"
                 android:label="@string/title_activity_peer_list"
                 android:theme="@style/AppTheme.NoActionBar"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".DNSListActivity"
-                android:parentActivityName=".MainActivity"
+                android:name="org.yggdrasil.app.crispa.DNSListActivity"
+                android:parentActivityName="org.yggdrasil.app.crispa.MainActivity"
                 android:label="@string/title_activity_dns_list"
                 android:theme="@style/AppTheme.NoActionBar"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".CopyLocalNodeInfoActivity"
-                android:parentActivityName=".MainActivity"
+                android:name="org.yggdrasil.app.crispa.CopyLocalNodeInfoActivity"
+                android:parentActivityName="org.yggdrasil.app.crispa.MainActivity"
                 android:label="@string/title_activity_copy_local_node_info"
                 android:theme="@style/AppTheme.NoActionBar"
                 android:screenOrientation="portrait"/>
         <service
-                android:name=".YggdrasilTunService"
+                android:name="org.yggdrasil.app.crispa.YggdrasilTunService"
+                android:stopWithTask="true"
                 android:enabled="true"
                 android:exported="true"
                 android:permission="android.permission.BIND_VPN_SERVICE">
@@ -49,7 +51,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".MainActivity"
+        <activity android:name="org.yggdrasil.app.crispa.MainActivity"
                 android:label="@string/app_name"
                 android:theme="@style/AppTheme.NoActionBar"
                 android:screenOrientation="portrait">
